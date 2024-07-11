@@ -1,6 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -28,7 +34,7 @@ body {
   font-style: normal;
 }
 header {
-  padding: 30px;
+  height: 125px;
 }
 header h1 {
   display: inline-block;
@@ -41,6 +47,7 @@ header h1 {
 
 .con_wrap {
   display: flex;
+  height: calc(100vh - 180px);
   justify-content: space-between;
   gap: 1%;
   padding: 0 20px 20px;
@@ -50,14 +57,49 @@ header h1 {
 }
 .con_wrap .beads_wrap {
   flex: 0 1 39%;
-  padding: 20px;
-  background: url("../asset/image/img_test.jpg") center center;
-  border-radius: 20px;
-  background-size: cover;
+}
+.con_wrap .preview_wrap {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-top: 35px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  padding: 35px 20px 15px;
+  overflow: hidden;
+}
+.con_wrap .preview_wrap::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  content: "MAKE BEADS";
+  background-color: #ffffff;
+  border-bottom: 1px solid #cacacb;
+  color: #484748;
   text-align: center;
+  line-height: 35px;
+  font-weight: 900;
+  font-size: 12px;
+  box-shadow: 0 0 3px rgba(202, 202, 203, 0.4588235294);
+}
+.con_wrap .preview_wrap::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 35px;
+  content: "";
+  background: url(../asset/image/btn_beads.png) no-repeat left 15px center;
+  background-size: 50px;
 }
 
 footer {
+  height: 35px;
+  padding: 10px;
   font-family: "HakgyoansimMulgyeolR";
   color: #4ba6d0;
   text-align: center;
@@ -66,9 +108,13 @@ footer p {
   font-size: 12px;
 }
 
-.beads_wrap {
-  width: auto;
-  height: auto;
-  min-width: 300px;
-  min-height: 300px;
+#grid-container {
+  display: grid;
+}
+
+.grid-item {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #f00;
+  box-sizing: border-box;
 }/*# sourceMappingURL=style.css.map */

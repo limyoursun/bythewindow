@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
@@ -13,19 +13,31 @@
     <h1>흔들리는 비즈발에서<br>네 샴푸향이 느껴진거야</h1>
   </header>
   <div class="con_wrap">
-    <div class="set_wrap">
-      <div>
-        도트 찍는 부분..^^
+    <div class="beads_wrap">
+      <div class="preview_wrap">
+        <canvas></canvas>
       </div>
     </div>
-    <div class="beads_wrap">
-      <canvas></canvas>
+    <div class="set_wrap">
+
+
+
+   <input type="color" id="color-picker">
+    <div id="grid-container"></div>
+    <ul id="color-list"></ul>
+    <button id="delete-color">선택한 색상 삭제</button>
+
+
+
+
     </div>
   </div>
   <footer>
     <p>Special Thanks to OROR</p>
-    <copy>&copy; 2024. LIM SUN. All rights reserved.</copy>
+    <copy>&copy; 2024. <a href="https://github.com/limyoursun" target="_blank">LIM SUN</a>. All rights reserved.</copy>
   </footer>
+  <script type="module" src="./js/color.js"></script>
+  <script type="module" src="./js/vector.js"></script>
   <script type="module" src="./js/app.js"></script>
 </body>
 
