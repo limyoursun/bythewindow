@@ -1,6 +1,4 @@
-// color.js
-
-let selectedColor = "#000"; // 초기 기본 색상 설정
+let selectedColor = "#888";
 
 const gridContainer = document.getElementById("grid-container");
 const colorList = document.getElementById("color-list");
@@ -8,8 +6,8 @@ const deleteColorButton = document.getElementById("delete-color");
 const colorPicker = document.getElementById("color-picker");
 
 const rows = 20;
-const cols = 20;
-const colorArray = Array.from({ length: rows }, () => Array(cols).fill(null));
+const cols = 40;
+const colorArray = Array.from({ length: rows }, () => Array(cols).fill(selectedColor));
 
 gridContainer.style.gridTemplateColumns = `repeat(${cols}, 20px)`;
 gridContainer.style.gridTemplateRows = `repeat(${rows}, 20px)`;
@@ -38,6 +36,7 @@ colorPicker.addEventListener("input", function () {
 function updateColorArray(row, col, color) {
     colorArray[row][col] = color;
     console.log(`Updated colorArray:`, colorArray);
+    window.app.updateRopes();
 }
 
 function updateColorList(color) {
@@ -62,7 +61,7 @@ deleteColorButton.addEventListener("click", function () {
         const col = item.dataset.col;
         if (item.style.backgroundColor === selectedColor) {
             item.style.backgroundColor = "white";
-            updateColorArray(row, col, null);
+            updateColorArray(row, col, "#ffffff");
         }
     });
     const colorItem = Array.from(colorList.children).find(item => item.dataset.color === selectedColor);
