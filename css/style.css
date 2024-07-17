@@ -305,4 +305,26 @@ footer * {
 footer p {
   font-size: 12px;
   font-weight: normal;
+}
+
+.responsive_info {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .con_wrap {
+    display: none;
+  }
+  body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-self: center;
+  }
+  .responsive_info {
+    display: block !important;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */
