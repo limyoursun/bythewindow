@@ -1,5 +1,6 @@
 ## **By the Window**🖼 : *MAKE BEADS!*
-![bythewindow](https://github.com/user-attachments/assets/7833eb1e-90e7-42e9-8e8e-d86f8ef75802)
+![preview](https://github.com/user-attachments/assets/61a7f2df-a058-4a03-b9c2-fa7e1c289be1)
+
 미니 프로젝트로 작업한 **By the Window**는 도안 작업 · 비즈 구입 등 진입장벽이 높은 비즈발 제작 취미를 웹으로 만들어보고 싶다는 생각에서 출발했습니다. MAKE BEADS를 이용하면 도안과 결과물을 동시에 확인할 수 있어요! 30X30의 자그마한 비즈발 세상에서 여러분의 비즈력을 뽐내보세요💟
 
 #### [🧸 비즈발 만들러가기 🍡](http://)
