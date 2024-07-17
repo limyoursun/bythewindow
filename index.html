@@ -4,43 +4,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Mate+SC&family=Playwrite+ID:wght@100..400&display=swap"
-    rel="stylesheet">
-
   <link rel="stylesheet" href="./css/style.css">
   <title>By the Window : MAKE BEADS</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="By the Window : MAKE BEADS">
+  <meta property="og:url" content="https://example.com/page.html">
+  <meta property="og:image" content="">
+  <meta property="og:description" content="비즈발을 만들어보세요! 우측 그리드에 색상을 칠하면 실시간으로 좌측에 생성된 비즈발을 확인할 수 있어요.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:title" content="By the Window : MAKE BEADS">
+  <meta name="twitter:card" content="트위터 카드 타입(요약정보, 사진, 비디오)">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:description" content="비즈발을 만들어보세요! 우측 그리드에 색상을 칠하면 실시간으로 좌측에 생성된 비즈발을 확인할 수 있어요.">
 </head>
 
 <body>
   <div class="con_wrap">
-
     <h1>By the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Window</h1>
     <div class="beads_wrap">
       <div class="preview_wrap">
         <canvas id="beadsCanvas"></canvas>
       </div>
     </div>
-
-
-
     <div class="postcard_wrap">
       <div class="postcard">
-          <div class="grid_wrap">
-            <h2>Fill the grid<br>with color</h2>
-            <p>Click on the stamp on the right, select the color you want, and color it where you want in the grid below.</p>
-            <div id="gridContainer" class="grid_container"></div>
+        <div class="grid_wrap">
+          <h2>Fill the grid<br>with color</h2>
+          <p>Click on the stamp on the right, select the color you want, and color it where you want in the grid below.
+          </p>
+          <div id="gridContainer" class="grid_container"></div>
+        </div>
+        <div class="color_wrap">
+          <div class="pick_wrap">
+            <span id="stampDate" class="stamp">Hello</span>
+            <input type="color" id="colorPicker">
           </div>
-          <div class="color_wrap">
-            <div class="pick_wrap">
-              <span id="stampDate" class="stamp">Hello</span>
-              <input type="color" id="colorPicker">
-            </div>
-            <ul id="colorList" class="color_list"></ul>
-            <p>I'm wild, I am free. Like a fire in the dark.<br>I am turning the key. And in time I will see.<br>I have everything I want, I have all that I need.<br></p>
-          </div>
+          <ul id="colorList" class="color_list"></ul>
+          <p>I'm wild, I am free. Like a fire in the dark.<br>I am turning the key. And in time I will see.<br>I have
+            everything I want, I have all that I need.<br></p>
+        </div>
       </div>
     </div>
   </div>
