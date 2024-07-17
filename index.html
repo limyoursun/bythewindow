@@ -4,41 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Mate+SC&family=Playwrite+ID:wght@100..400&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="./css/style.css">
-  <title>흔들리는 비즈발에서 네 샴푸향이 느껴진거야</title>
+  <title>By the Window : MAKE BEADS</title>
 </head>
 
 <body>
-  <header>
-    <h1>흔들리는 비즈발에서<br>네 샴푸향이 느껴진거야</h1>
-  </header>
   <div class="con_wrap">
+
+    <h1>By the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Window</h1>
     <div class="beads_wrap">
       <div class="preview_wrap">
-        <canvas></canvas>
+        <canvas id="beadsCanvas"></canvas>
       </div>
     </div>
-    <div class="set_wrap">
 
 
 
-   <input type="color" id="color-picker">
-    <div id="grid-container"></div>
-    <ul id="color-list"></ul>
-    <button id="delete-color">선택한 색상 삭제</button>
-
-
-
-
+    <div class="postcard_wrap">
+      <div class="postcard">
+          <div class="grid_wrap">
+            <h2>Fill the grid<br>with color</h2>
+            <p>Click on the stamp on the right, select the color you want, and color it where you want in the grid below.</p>
+            <div id="gridContainer" class="grid_container"></div>
+          </div>
+          <div class="color_wrap">
+            <div class="pick_wrap">
+              <span id="stampDate" class="stamp">Hello</span>
+              <input type="color" id="colorPicker">
+            </div>
+            <ul id="colorList" class="color_list"></ul>
+            <p>I'm wild, I am free. Like a fire in the dark.<br>I am turning the key. And in time I will see.<br>I have everything I want, I have all that I need.<br></p>
+          </div>
+      </div>
     </div>
   </div>
   <footer>
+    <p>This website is inspired by 'kiki`s song' from mree.</p>
     <p>Special Thanks to OROR</p>
     <copy>&copy; 2024. <a href="https://github.com/limyoursun" target="_blank">LIM SUN</a>. All rights reserved.</copy>
   </footer>
+  <script type="module" src="./js/script.js"></script>
   <script type="module" src="./js/color.js"></script>
   <script type="module" src="./js/vector.js"></script>
-  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/canvas.js"></script>
 </body>
 
 </html>

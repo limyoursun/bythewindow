@@ -1,15 +1,16 @@
+// app.js
 import { selectedColor, colorArray } from "./color.js";
 import Vector from "./vector.js";
 
-const DOT_RADIUS = 15;
-const TOTAL_ROPES = 40;
-const ROPE_GAP = 27;
-const ROPE_SEGMENTS = 20;
+const DOT_RADIUS = 6.8;
+const TOTAL_ROPES = 30;
+const ROPE_SEGMENTS = 30;
+const ROPE_GAP = 11.4;
 
 class Mouse {
   constructor(canvas) {
     this.pos = new Vector(-1000, -1000);
-    this.radius = 50;
+    this.radius = 28;
 
     canvas.addEventListener("mousemove", (e) => {
       const rect = canvas.getBoundingClientRect();
@@ -42,8 +43,7 @@ class Dot {
     this.mass = 10;
     this.radius = radius;
     this.pinned = false;
-    this.color = "#888";
-    this.borderColor = "rgba(0,0,0,0.3)";
+    this.borderColor = "rgba(0,0,0,0.2)";
     this.borderWidth = 1;
   }
 
@@ -65,7 +65,7 @@ class Dot {
   }
 
   draw(ctx) {
-    ctx.fillStyle = this.color || selectedColor;
+    ctx.fillStyle = adjustAlpha(this.color || selectedColor, 0.65);
     ctx.beginPath();
     ctx.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2);
     ctx.fill();
@@ -171,7 +171,7 @@ class App {
   static height = innerHeight;
   static interval = 1000 / 60;
   constructor() {
-    this.canvas = document.querySelector("canvas");
+    this.canvas = document.getElementById("beadsCanvas");
     this.ctx = this.canvas.getContext("2d");
     this.mouse = new Mouse(this.canvas);
     this.resize();
@@ -184,7 +184,7 @@ class App {
     
     for (let i = 0; i < TOTAL_ROPES; i++) {
       const x = ROPE_GAP * (i + 0.7);
-      const y = 14;
+      const y = 7;
       const rope = new Rope({ x, y, gap: ROPE_GAP, segments: ROPE_SEGMENTS });
       rope.pin(0);
       this.ropes.push(rope);
@@ -200,8 +200,8 @@ class App {
     App.height = outerHeight;
     this.canvas.style.width = "100%";
     this.canvas.style.height = "100%";
-    this.canvas.height = 550;
-    this.canvas.width = this.canvas.height * 2;
+    this.canvas.width = 345;
+    this.canvas.height = 350;
     this.createRopes();
   }
 
@@ -222,6 +222,19 @@ class App {
     };
     requestAnimationFrame(frame);
   }
+}
+
+function adjustAlpha(hex, alpha) {
+  let c;
+  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+    c = hex.substring(1).split('');
+    if (c.length === 3) {
+      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+    }
+    c = '0x' + c.join('');
+    return `rgba(${[(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',')},${alpha})`;
+  }
+  throw new Error('Bad Hex');
 }
 
 window.addEventListener("load", () => {
