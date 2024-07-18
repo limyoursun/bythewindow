@@ -299,12 +299,13 @@ footer {
   font-weight: bold;
   color: #ffffff;
 }
-footer * {
-  font-family: "Cinzel", serif;
-}
 footer p {
-  font-size: 12px;
+  font-family: "Cinzel", serif;
   font-weight: normal;
+  font-size: 10px;
+}
+footer > p {
+  font-size: 12px;
 }
 
 .responsive_info {
@@ -312,19 +313,26 @@ footer p {
 }
 
 @media (max-width: 1023px) {
-  .con_wrap {
-    display: none;
-  }
   body {
     display: flex;
     height: 100vh;
     align-items: center;
     justify-self: center;
+    background: url(./../asset/image/bg_window.jpg);
   }
   .responsive_info {
     display: block !important;
     width: 100%;
+    padding: 30px;
     font-size: 30px;
+    font-weight: bold;
+    color: #fff;
     text-align: center;
+  }
+  footer {
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
   }
 }/*# sourceMappingURL=style.css.map */

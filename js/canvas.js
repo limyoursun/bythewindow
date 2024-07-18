@@ -1,4 +1,4 @@
-// app.js
+// color canvas
 import { selectedColor, colorArray } from "./color.js";
 import Vector from "./vector.js";
 

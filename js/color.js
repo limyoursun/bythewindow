@@ -1,3 +1,4 @@
+// color grid
 let selectedColor = "#ffffff";
 
 const gridContainer = document.getElementById("gridContainer");
